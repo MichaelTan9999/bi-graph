@@ -43,7 +43,7 @@ export const Graph: FC<GraphProps> = (props) => {
                         <BarChart
                             width={ 500 }
                             height={ 300 }
-                            data={ props.data }
+                            data={ props.data as any[] }
                             margin={ {
                                 top: 5,
                                 right: 30,
@@ -68,7 +68,7 @@ export const Graph: FC<GraphProps> = (props) => {
                         <LineChart
                             width={ 500 }
                             height={ 300 }
-                            data={ props.data }
+                            data={ props.data as any[] }
                             margin={ {
                                 top: 5,
                                 right: 30,
