@@ -1,6 +1,6 @@
 {
   "name": "bi-graph",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A React self-adapted BI graph component",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -48,7 +48,9 @@
     ]
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "provenance": true
   },
   "peerDependencies": {
     "react": ">=16.9.0",
@@ -64,6 +66,8 @@
     "eslint": "^8.23.0",
     "father": "^4.1.0",
     "husky": "^8.0.1",
+    "less": "^4.2.1",
+    "less-loader": "^12.2.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "prettier-plugin-organize-imports": "^3.0.0",

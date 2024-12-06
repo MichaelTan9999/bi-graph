@@ -1,3 +1,5 @@
-import { Graph } from "./Graph";
+import './graph.less';
+
+import { Graph } from './graph';
 
 export default Graph;

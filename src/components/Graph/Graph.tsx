@@ -12,6 +12,8 @@ interface GraphProps {
     data: Record<string, any>
 }
 
+const classPrefix = 'bi-graph';
+
 export const Graph: FC<GraphProps> = (props) => {
     const [chartType, setChartType] = useState<ChartType>(ChartType.BarChart);
     const categories = Object.keys(props.data[0]).filter((v) => { return v !== 'name' });
@@ -26,17 +28,20 @@ export const Graph: FC<GraphProps> = (props) => {
     });
 
     return (
-        <>
-            <Select style={ { width: 100 } } defaultValue={ ChartType.BarChart }
-                onChange={ (value: ChartType) => {
-                    setChartType(value)
-                } }
-                options={ [
-                    { label: '柱状图', value: ChartType.BarChart },
-                    { label: '饼状图', value: ChartType.PieChart },
-                    { label: '折线图', value: ChartType.LineChart }
-                ] }
-            />
+        <div className={`${classPrefix}`}>
+            <div className={`${classPrefix}-action`}>
+                <Select className={`${classPrefix}-action-select`} style={ { maxWidth: 100 } } defaultValue={ ChartType.BarChart }
+                    onChange={ (value: ChartType) => {
+                        setChartType(value)
+                    } }
+                    options={ [
+                        { label: '柱状图', value: ChartType.BarChart },
+                        { label: '饼状图', value: ChartType.PieChart },
+                        { label: '折线图', value: ChartType.LineChart }
+                    ] }
+                />
+            </div>
+            <div className={`${classPrefix}-graph`}>
             {
                 chartType === ChartType.BarChart && (
                     <ResponsiveContainer width="100%" height={ 300 }>
@@ -109,6 +114,7 @@ export const Graph: FC<GraphProps> = (props) => {
                     )
                 })
             }
-        </>
+            </div>
+        </div>
     )
 }
