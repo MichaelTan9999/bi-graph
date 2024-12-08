@@ -20,5 +20,5 @@ export const Dataframe: FC<DataframeProps> = (props) => {
         }
     } = props;
 
-    return <Table dataSource={dataSource} columns={columns} size="small" />
+    return <Table dataSource={dataSource} columns={columns} size="small" pagination={false} />
 }
