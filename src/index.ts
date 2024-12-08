@@ -1,2 +1,7 @@
-export { default as Foo } from './components/Foo';
-export { default as Graph } from './components/graph';
+import Graph from "./components/graph";
+import Dataframe from "./components/dataframe";
+
+export {
+    Graph,
+    Dataframe
+}

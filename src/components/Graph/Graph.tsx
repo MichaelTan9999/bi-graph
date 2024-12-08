@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { CSSProperties, FC, useState } from 'react';
 import { Select } from 'antd';
 import { BarChart, LineChart, PieChart, Pie, Line, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
@@ -9,7 +9,8 @@ enum ChartType {
 }
 
 interface GraphProps {
-    data: Record<string, any>
+    data: Record<string, any>;
+    style: CSSProperties;
 }
 
 const classPrefix = 'bi-graph';
@@ -28,7 +29,7 @@ export const Graph: FC<GraphProps> = (props) => {
     });
 
     return (
-        <div className={`${classPrefix}`}>
+        <div className={`${classPrefix}`} style={props.style}>
             <div className={`${classPrefix}-action`}>
                 <Select className={`${classPrefix}-action-select`} style={ { maxWidth: 100 } } defaultValue={ ChartType.BarChart }
                     onChange={ (value: ChartType) => {
