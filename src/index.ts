@@ -1,2 +1,2 @@
-export { default as Graph } from './components/graph';
-export { default as Dataframe } from './components/dataframe';
+export { default as Graph } from 'src/components/graph';
+export { default as Dataframe } from 'src/components/graph';
