@@ -1,7 +1,2 @@
-import Graph from "./components/graph";
-import Dataframe from "./components/dataframe";
-
-export {
-    Graph,
-    Dataframe
-}
+export { default as Graph } from './components/graph';
+export { default as Dataframe } from './components/dataframe';
